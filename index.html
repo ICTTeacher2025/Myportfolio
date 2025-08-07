@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nizam Ansari - ICT Teacher Portfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+            background-color: #0a192f;
+        }
+
+        /* Tech-themed animated background */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(45deg, rgba(10, 25, 47, 0.9) 0%, rgba(21, 101, 192, 0.7) 100%),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%233498db" width="10" height="10" x="10" y="10" opacity="0.2"/><rect fill="%233498db" width="10" height="10" x="30" y="30" opacity="0.2"/><rect fill="%233498db" width="10" height="10" x="50" y="50" opacity="0.2"/><rect fill="%233498db" width="10" height="10" x="70" y="70" opacity="0.2"/></svg>');
+            z-index: -1;
+            animation: moveBackground 60s linear infinite;
+        }
+
+        @keyframes moveBackground {
+            0% { background-position: 0 0; }
+            100% { background-position: 1000px 1000px; }
+        }
+
+        /* Binary code animation */
+        .binary-code {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        .binary-digit {
+            position: absolute;
+            color: #64ffda;
+            font-family: monospace;
+            font-size: 16px;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(100vh); }
+        }
+
+        header {
+            background-color: rgba(21, 101, 192, 0.8);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(100, 255, 218, 0.2);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #64ffda;
+        }
+
+        h2 {
+            color: #64ffda;
+            border-bottom: 2px solid #64ffda;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        h3 {
+            color: #88a8ff;
+        }
+
+        .contact-info {
+            margin-top: 15px;
+            font-size: 1.1em;
+        }
+
+        .section {
+            background-color: rgba(10, 25, 47, 0.8);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            color: #ccd6f6;
+        }
+
+        .job {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed rgba(100, 255, 218, 0.3);
+        }
+
+        .job:last-child {
+            border-bottom: none;
+        }
+
+        .job-title {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #88a8ff;
+        }
+
+        .company {
+            font-weight: bold;
+            color: #64ffda;
+        }
+
+        .date {
+            color: #8892b0;
+            font-style: italic;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            color: #ccd6f6;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skill-category {
+            flex: 1;
+            min-width: 250px;
+            background-color: rgba(21, 101, 192, 0.1);
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        .certificate {
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 3px solid #64ffda;
+        }
+
+        .cert-title {
+            font-weight: bold;
+            color: #88a8ff;
+        }
+
+        .cert-date {
+            color: #8892b0;
+            font-size: 0.9em;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background-color: #64ffda;
+            color: #0a192f;
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .download-btn:hover {
+            background-color: #88a8ff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .blog-link {
+            display: inline-block;
+            background-color: #88a8ff;
+            color: #0a192f;
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin-left: 10px;
+        }
+
+        .blog-link:hover {
+            background-color: #64ffda;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .project {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: rgba(21, 101, 192, 0.1);
+            border-radius: 5px;
+            border-left: 3px solid #64ffda;
+        }
+
+        .project-title {
+            font-weight: bold;
+            color: #88a8ff;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #8892b0;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .skills-container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .download-btn, .blog-link {
+                display: block;
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Binary code animation -->
+    <div class="binary-code" id="binaryCode"></div>
+
+    <header>
+        <h1>Nizam Ansari</h1>
+        <div class="contact-info">
+            ICT Teacher | Tech Educator | Digital Skills Trainer
+        </div>
+        <div class="contact-info">
+            📧 teachersam404@gmail.com | 📞 +66 984148528 | 🌏 Bangkok, Thailand
+        </div>
+    </header>
+
+    <div class="section">
+        <h2>Professional Summary</h2>
+        <p>Experienced ICT Teacher with a passion for technology and a commitment to inspiring students. Successfully developed and implemented comprehensive curricula for students to gain proficiency in coding, robotics, and digital design. Adept at fostering positive learning environments, creating engaging activities, and troubleshooting technical issues. Certified in TEFL with additional expertise in UI/UX design, blockchain technology, and artificial intelligence.</p>
+        
+        <p>Specialized in teaching various curricula including Cambridge IGCSE, A.C.E. School of Tomorrow, and Thailand's BE 2551 curriculum. Proven ability to integrate technology across all grade levels from primary to secondary education.</p>
+    </div>
+
+    <div class="section">
+        <h2>Teaching & Technical Experience</h2>
+        
+        <div class="job">
+            <div class="job-title">ICT Teacher</div>
+            <div class="company">Chindamanee School, Bangkok - Thailand</div>
+            <div class="date">Aug 2024 - Present</div>
+            <div>Curriculum: Cambridge IGCSE™ AS & A Level, IGCSE 0983 & 0478</div>
+            <ul>
+                <li>Teaching IT, Cambridge International AS & A level to Y7 - Y13 students</li>
+                <li>Teaching Robotics to Y6 students</li>
+                <li>Setup and prepare IGCSE exams as per Cambridge required rules and regulations</li>
+                <li>Support and prepare additional activities</li>
+                <li>Support and repair staff computers and laptops</li>
+                <li>Maintained school's social media accounts</li>
+                <li>Coordinated STEM festival event 2024</li>
+                <li>Developed interactive learning materials for ICT subjects</li>
+            </ul>
+        </div>
+        
+        <div class="job">
+            <div class="job-title">ICT Teacher</div>
+            <div class="company">Legacy of Grace International Christian School, Chumphon - Thailand</div>
+            <div class="date">Jan 2023 - Aug 2023</div>
+            <div>Curriculum: A.C.E. School of Tomorrow® Curriculum, USA</div>
+            <ul>
+                <li>Taught ICT Grade 1 - Grade 6 Students</li>
+                <li>Taught mBot (Robotics)</li>
+                <li>Taught students according to their educational needs, including setting and marking work</li>
+                <li>Prepared and updated subject materials</li>
+                <li>Assisted the Curriculum Leader for Business and ICT</li>
+                <li>Implemented project-based learning activities</li>
+            </ul>
+        </div>
+        
+        <div class="job">
+            <div class="job-title">Primary Digital Education Teacher</div>
+            <div class="company">Kajonkietsuksa School, Phuket - Thailand</div>
+            <div class="date">Aug 2021 - June 2023</div>
+            <div>Curriculum: The Basic Education Core Curriculum B.E. 2551 (A.D. 3000)</div>
+            <ul>
+                <li>Taught ICT to Primary 1 to Primary 3 students</li>
+                <li>Taught Scratch, Codemonkey and similar block-based coding</li>
+                <li>Taught HTML, CSS, Graphic Designing to higher secondary schools in coding clubs</li>
+                <li>Prepared and setup Robotic Competitions & Scratch Olympiad</li>
+                <li>Prepared question papers and conducted exams</li>
+                <li>Organized coding clubs and Friday club activities</li>
+            </ul>
+        </div>
+        
+        <div class="job">
+            <div class="job-title">IT Support Specialist</div>
+            <div class="company">Al Sheikha Style, Doha - Qatar</div>
+            <div class="date">Mar 2018 - Apr 2021</div>
+            <ul>
+                <li>Maintained, troubleshooted company computers, printers and other peripherals</li>
+                <li>Troubleshooted networks and other IT related issues</li>
+                <li>Installed useful applications to secure company computers and devices</li>
+                <li>Handled social media accounts for Digital Marketing purposes</li>
+                <li>Designed posters for events and other occasions</li>
+                <li>Worked as a META support specialist</li>
+                <li>Designed and developed Shopify based e-commerce website (www.sheikhastyle.com)</li>
+                <li>Managed digital marketing campaigns</li>
+            </ul>
+        </div>
+        
+        <div class="job">
+            <div class="job-title">ICT Teacher</div>
+            <div class="company">Gautam Secondary School, Birganj - Nepal</div>
+            <div class="date">Jan 2013 - Dec 2016</div>
+            <div>Curriculum: NCF</div>
+            <ul>
+                <li>Taught computer science to secondary level students</li>
+                <li>Maintained school computer lab</li>
+                <li>Assisted in school administration systems</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Technical Skills & Teaching Expertise</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Programming & Development</h3>
+                <ul>
+                    <li>HTML, CSS</li>
+                    <li>JavaScript (basic)</li>
+                    <li>Java (basic)</li>
+                    <li>C++ (basic)</li>
+                    <li>Scratch programming</li>
+                    <li>Block-based coding</li>
+                    <li>Shopify website development</li>
+                    <li>Python (beginner)</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Robotics & AI</h3>
+                <ul>
+                    <li>mBot robotics</li>
+                    <li>Robbolab</li>
+                    <li>micro:bit</li>
+                    <li>Basic principles of Artificial Intelligence</li>
+                    <li>CyberPi operation</li>
+                    <li>LEGO Mindstorms</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Design & Multimedia</h3>
+                <ul>
+                    <li>Adobe Illustrator</li>
+                    <li>Adobe Photoshop</li>
+                    <li>Adobe InDesign</li>
+                    <li>UI/UX Design principles</li>
+                    <li>Graphic design</li>
+                    <li>Digital marketing materials</li>
+                    <li>Video editing basics</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Teaching Methodologies</h3>
+                <ul>
+                    <li>Cambridge IGCSE curriculum</li>
+                    <li>A.C.E. School of Tomorrow®</li>
+                    <li>Project-based learning</li>
+                    <li>STEM/STEAM education</li>
+                    <li>Content-based instruction</li>
+                    <li>Teaching English to Young Learners</li>
+                    <li>Differentiated instruction</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Education & Certifications</h2>
+        
+        <div class="certificate">
+            <div class="cert-title">Bachelor of Computer Application (BCA)</div>
+            <div>Jai Prakash University Chhapra - India</div>
+            <div class="cert-date">2008-2011 | First Class</div>
+        </div>
+        
+        <div class="certificate">
+            <div class="cert-title">120-Hour International TEFL Certificate (Distinction)</div>
+            <div>TEFL Professional Institute - TeacherRecord</div>
+            <div class="cert-date">May 2024</div>
+        </div>
+        
+        <div class="certificate">
+            <div class="cert-title">Introduction to Blockchain and Cryptocurrency World</div>
+            <div>Prince of Songkla University, Phuket Campus</div>
+            <div class="cert-date">October 2022</div>
+        </div>
+        
+        <div class="certificate">
+            <div class="cert-title">Elements of AI (2 ECTS credits)</div>
+            <div>University of Helsinki & Reaktor</div>
+            <div class="cert-date">August 2018</div>
+        </div>
+        
+        <div class="certificate">
+            <div class="cert-title">Diploma in Programming</div>
+            <div>Computer Training Center, Birganj - Nepal</div>
+        </div>
+        
+        <div class="certificate">
+            <div class="cert-title">UI/UX Designing Course</div>
+            <div>Computer Training Center, Birganj - Nepal</div>
+        </div>
+        
+        <div class="certificate">
+            <div class="cert-title">Diploma in Computer Hardware</div>
+            <div>Uma Electronics & Computer Institute, Raxaul - India</div>
+        </div>
+        
+        <div class="certificate">
+            <div class="cert-title">Diploma in Computer Application</div>
+            <div>Uma Electronics & Computer Institute, Raxaul - India</div>
+        </div>
+        
+        <h3>Additional Professional Development</h3>
+        <ul>
+            <li>Content-based Instruction - U.S. Department of State (2021)</li>
+            <li>Teaching English to Young Learners - George Mason University (2021)</li>
+            <li>Professional Development for Teacher Trainers - Arizona State University (2021)</li>
+            <li>DesignThinking Coding 3D for Metaverse by CoSpaces EDU - iMAKE Innovation (2022)</li>
+            <li>American English E-Teacher Program - Multiple courses (2021)</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Projects & Initiatives</h2>
+        
+        <div class="project">
+            <div class="project-title">STEAM Festival Coordination</div>
+            <div class="date">2024</div>
+            <p>Successfully coordinated the STEAM Festival 2024 at Chindamanee School, organizing various technology and science-related activities and competitions for students.</p>
+        </div>
+        
+        <div class="project">
+            <div class="project-title">Robotics Competitions</div>
+            <div class="date">2021-2023</div>
+            <p>Prepared and setup Robotic Competitions & Scratch Olympiad at Kajonkietsuksa School, helping students showcase their programming and robotics skills.</p>
+        </div>
+        
+        <div class="project">
+            <div class="project-title">E-commerce Website Development</div>
+            <div class="date">2018-2021</div>
+            <p>Designed and developed a Shopify based e-commerce website (www.sheikhastyle.com) for Al Sheikha Style in Doha, Qatar.</p>
+        </div>
+        
+        <div class="project">
+            <div class="project-title">Coding Clubs Implementation</div>
+            <div class="date">2021-2023</div>
+            <p>Established and managed coding clubs in schools, teaching HTML, CSS, and graphic design to interested students through extracurricular activities.</p>
+        </div>
+    </div>
+
+
+    <div class="section">
+        <h2>Languages</h2>
+        <ul>
+            <li>English (Fluent)</li>
+            <li>Hindi (Fluent)</li>
+            <li>Arabic (Basic)</li>
+            <li>Urdu</li>
+            <li>Nepali</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Achievements & Events</h2>
+        <ul>
+            <li>Coordinated the STEAM Festival 2025 at Chindamanee School</li>
+            <li>Prepared and setup Robotic Competitions & Scratch Olympiad at Kajonkietsuksa School</li>
+            <li>Developed and implemented comprehensive ICT curricula across multiple institutions</li>
+            <li>Successfully designed and developed e-commerce website (www.sheikhastyle.com)</li>
+            <li>Received multiple certificates of appreciation from schools for teaching excellence</li>
+            <li>Participated in numerous professional development programs in education technology</li>
+        </ul>
+    </div>
+
+        <div class="section">
+        <h2>Certificates & Clearances</h2>
+        
+        <div class="certificate">
+            <div class="cert-title">Police Clearance Certificate</div>
+            <div>Issued by Nepal Police Headquarters, Ministry of Home Affairs</div>
+            <div class="cert-date">Issued: 31 August 2021 | Valid until: 24 March 2017 (as per records)</div>
+            <div class="cert-details">
+                <p><strong>Full Name:</strong> Najamuddin Miya Ansari</p>
+                <p><strong>Father's Name:</strong> Safik Miya Ansari</p>
+                <p><strong>Address:</strong> Birgunj 2, Parsa, Nepal</p>
+                <p><strong>Date of Birth:</strong> 11 October 1988</p>
+                <p><strong>Gender:</strong> Male</p>
+                <p><strong>Nationality:</strong> Nepali</p>
+                <p><strong>Citizenship No.:</strong> 341022/57 (Issued From: Parsa)</p>
+                <p><strong>Passport No.:</strong> 12146715 (Issued From: Embassy of Nepal, Doha)</p>
+                <p><strong>Status:</strong> No criminal record against him as verified from central police crime database</p>
+                <p><strong>Issuing Officer:</strong> Mitra Bandhu Sharma, Deputy Superintendent of Police</p>
+                <p><strong>Verification:</strong> Can be verified at <a href="http://www.nepalpolice.gov.np/index.php/vopcr" target="_blank" style="color:#64ffda;">www.nepalpolice.gov.np</a></p>
+                <p><strong>Note:</strong> Any erasure or amendment in this certificate makes it invalid.</p>
+            </div>
+        </div>
+
+            <div class="section">
+        <h2>Certificates & Blog</h2>
+        <p>You can download my complete certificates package for verification and reference, and visit my blog for more information about my teaching philosophy and experiences:</p>
+        <a href="https://drive.google.com/file/d/1Kf4-qDBz5iUfjF0EAjumcE2YeTG5KW6f/view?usp=sharing" class="download-btn" target="_blank">
+            Download Certificates Package
+        </a>
+        <a href="https://myictresume.blogspot.com/2024/01/ictresume.html" class="blog-link" target="_blank">
+            Visit My ICT Blog
+        </a>
+    </div>
+
+    <footer>
+        <p>References available upon request</p>
+        <p>&copy; 202 Nizam Ansari - ICT Teacher Portfolio</p>
+    </footer>
+
+    <script>
+        // Binary code animation script
+        document.addEventListener('DOMContentLoaded', function() {
+            const binaryCode = document.getElementById('binaryCode');
+            const binaryChars = ['0', '1'];
+            const columns = Math.floor(window.innerWidth / 20);
+            
+            for (let i = 0; i < columns; i++) {
+                const digit = document.createElement('div');
+                digit.className = 'binary-digit';
+                digit.textContent = binaryChars[Math.floor(Math.random() * binaryChars.length)];
+                digit.style.left = (i * 20) + 'px';
+                digit.style.animationDuration = (10 + Math.random() * 20) + 's';
+                digit.style.animationDelay = (Math.random() * 5) + 's';
+                binaryCode.appendChild(digit);
+            }
+        });
+    </script>
+</body>
+</html>
